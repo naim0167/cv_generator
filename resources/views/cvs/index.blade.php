@@ -9,9 +9,9 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     {{ __('You are logged in!') }}
@@ -23,9 +23,9 @@
                         <input type="submit" value="Upload">
                     </form>
                 </div>
-            <a href="{{route('cv.index')}}" class="mx-5 py-2 text-blue-400 curson pointer text-black">
-            {{-- <span class="fas fa-plus-circle"></span> --}}HUMPTY DUMPTY
-            </a>
+                <a href="{{route('cv.create')}}" class="mx-5 py-2 text-blue-400 curson pointer text-black">
+                    {{-- <span class="fas fa-plus-circle"></span> --}}HUMPTY DUMPTY
+                </a>
             </div>
         </div>
     </div>

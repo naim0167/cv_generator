@@ -12,10 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('/cv', 'cvResourceController');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'UserController@welcome');
 Route::get('/user','UserController@index');
 
 Auth::routes();
