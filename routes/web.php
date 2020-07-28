@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('/cv', 'cvResourceController');
-
+Route::post('/upload', function(Request $request){
+    $request->image->store('images','public');
+    return 'Uploaded';
+});
 Route::get('/', 'UserController@welcome');
 Route::get('/user','UserController@index');
 
