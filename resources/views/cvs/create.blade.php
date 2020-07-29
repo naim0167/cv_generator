@@ -13,7 +13,6 @@
                     @endif
                     {{ __('You are logged in!') }}
                 </div>
-
                 <div class="card-body">
                 {{-- <x-alert /> --}}
                     <form action="/cv/create" class="py-5" method="post">
