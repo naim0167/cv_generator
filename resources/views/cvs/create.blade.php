@@ -12,13 +12,12 @@
                     </div>
                     @endif
                     {{ __('You are logged in!') }}
-                <a href="{{route('cv.index')}}" class="m-5 bg-white-400 cursor-pointer rounded">XXDD</a>
+                <a href="{{route('cv.index')}}" class="m-5 bg-white-400 cursor-pointer rounded">CV =></a>
                 </div>
                 <div class="card-body">
                     <h2><b>First Part</b></h2>
                     <hr>
                     <br>
-                    {{-- <x-alert /> --}}
                     <form action="/cv/create" method="post">
                         @csrf
                         <div class="form-row">
@@ -89,7 +88,7 @@
                     <br>
                 </div>
 
-                <div class="card-body">
+                {{-- <div class="card-body">
                     <form action="" method="post">
                         @csrf
                         <h2><b>Second Part</b></h2>
@@ -117,17 +116,16 @@
                             <div class="form-group col-md-12">
                                 <label for="jobtitle">Job Title</label>
                                 <input type="text" class="form-control" id="jobtitle" placeholder="Enter your job position">
-                                {{-- <textarea class="form-control" id="professionalexperienced" rows="3" cols="100"></textarea> --}}
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="companyname">Company Name</label>
-                                <input type="text" class="form-control" id="companyname" placeholder="Enter the place of work">
+                                <input type="text" class="form-control" id="companyname" placeholder="Enter company name">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="jobcity">Job City</label>
-                                <input type="text" class="form-control" id="jobcity" placeholder="Enter the place you worked in">
+                                <input type="text" class="form-control" id="jobcity" placeholder="Enter the place of work">
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="workdetails">Work you did : </label>
@@ -135,10 +133,70 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                    <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
+                </div> --}}
 
                 <div class="card-body">
-                    <h2><b>Third Part</b></h2>
+                    <form action="" method="post">
+                        @csrf
+                        <h2><b>Third Part</b></h2>
+                        <hr>
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <label for="educationalInstitute">Educational Institue Name</label>
+                                <input type="text" class="form-control" id="educationalInstitute" placeholder="Enter your educational institues name">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="educationCountry">Country</label>
+                                <input type="text" class="form-control" id="educationCountry" placeholder="Country Name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="degreeName">Degree Name</label>
+                                <input type="text" class="form-control" id="degreeName" placeholder="ex.- Bachelor's/Masters'">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="subjectName">Subject Name</label>
+                                <input type="text" class="form-control" id="subjectName" placeholder="ex.- Software Engineering">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="educationstart">Start Date</label>
+                                <input type="date" class="form-control" id="educationstart" placeholder="Start Date">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="educationend">End Date</label>
+                                <input type="date" class="form-control" id="educationend" aria-describedby="educationendhelp" placeholder="End Date">
+                                <small id="educationendhelp" class="form-text text-muted">Please don't select it if you are currently studing there</small>
+                            </div>
+                        </div>
+                    </form>
+                    <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
+                </div>
+                <div class="card-body">
+                    <h2><b>Fourth Part</b></h2>
+                    <hr>
+                    <br>
+                    <form action="/upload" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="technicalSkills">Technical Skill Set </label>
+                                <textarea class="form-control" id="technicalSkills" rows="6" cols="100"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="personalInterest">Personal Interest</label>
+                                <textarea class="form-control" id="personalInterest" rows="2" cols="100"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-body">
+                    <h2><b>Final Part</b></h2>
                     <hr>
                     <br>
                     <form action="/upload" method="POST" enctype="multipart/form-data">
