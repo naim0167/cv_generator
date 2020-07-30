@@ -13,9 +13,18 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    {{('You are logged in!')}}
                 </div>
+                <div class="card-body">
+                    <form action="/upload" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="image">
+                        <input type="submit" value="Upload">
+                    </form>
+                </div>
+            <a href="{{route('cv.index')}}" class="mx-5 py-2 text-blue-400 curson pointer text-black">
+            {{-- <span class="fas fa-plus-circle"></span> --}}HUMPTY DUMPTY
+            </a>
             </div>
         </div>
     </div>

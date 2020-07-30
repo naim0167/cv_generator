@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,10 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/cv', 'cvResourceController');
+Route::post('/upload', 'UserController@uploadAvatar');
+Route::get('/', 'UserController@welcome');
 Route::get('/user','UserController@index');
 
 Auth::routes();
