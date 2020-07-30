@@ -12,7 +12,7 @@ class UserController extends Controller
         if($request->hasFile('image')) {
             $filename = $request->image->getClientOriginalName();
             $request->image->storeAs('images',$filename,'public');
-            User::find(1)->update(['avatar'=>$filename]);
+            auth()->user()->update(['avatar'=>$filename]);
         }
         return redirect()->back();
     }
