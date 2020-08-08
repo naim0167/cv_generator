@@ -10,11 +10,10 @@ class UserController extends Controller
     public function uploadAvatar(Request $request)
     {
         if($request->hasFile('image')) {
-            $filename = $request->image->getClientOriginalName();
-            $request->image->storeAs('images',$filename,'public');
-            auth()->user()->update(['avatar'=>$filename]);
+            User::uploadAvatar($request->image);
+            return redirect()->back()->with('message', 'Image Uploaded!');
         }
-        return redirect()->back();
+        return redirect()->back()->with('error', 'Image not Uploaded!');
     }
 
     public function welcome()
