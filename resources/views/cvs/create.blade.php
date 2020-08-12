@@ -83,7 +83,6 @@
                         </div>
                         {{-- <input type="submit" name="title" class="py-2 px-2 border rounded" />
                         <input type="submit" value="Create" class="p-2 border rounded" /> --}}
-                    </form>
                     <br>
                     <br>
                 </div>
@@ -137,7 +136,6 @@
                 </div> --}}
 
                 <div class="card-body">
-                    <form action="" method="post">
                         @csrf
                         <h2><b>Third Part</b></h2>
                         <hr>
@@ -172,14 +170,12 @@
                                 <small id="educationendhelp" class="form-text text-muted">Please don't select it if you are currently studing there</small>
                             </div>
                         </div>
-                    </form>
                     <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
                 </div>
                 <div class="card-body">
                     <h2><b>Fourth Part</b></h2>
                     <hr>
                     <br>
-                    <form action="/upload" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-12">
@@ -193,13 +189,11 @@
                                 <textarea class="form-control" id="personalInterest" rows="2" cols="100"></textarea>
                             </div>
                         </div>
-                    </form>
                 </div>
                 <div class="card-body">
                     <h2><b>Final Part</b></h2>
                     <hr>
                     <br>
-                    <form action="/upload" method="POST" enctype="multipart/form-data">
                         @csrf
                         <h5>Please select your profile picture</h5>
                         <br>
