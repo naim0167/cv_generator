@@ -35,7 +35,9 @@ class cvResourceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        // cvResourceController::create($request->all());
+        // return redirect()->back()->with('message','Created Successfully');
     }
 
     /**

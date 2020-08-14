@@ -15,10 +15,10 @@ class CreateCvsTable extends Migration
     {
         Schema::create('cvs', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('address');
-            $table->string('phone');
+            $table->string('firstname');
+            $table->string('lastname');
+            // $table->string('address');
+            // $table->string('phone');
             $table->boolean('complete');
             $table->timestamps();
         });
