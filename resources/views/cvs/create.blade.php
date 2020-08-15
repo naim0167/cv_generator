@@ -31,7 +31,7 @@
                                     <input name="lastname" type="text" class="form-control" id="lastname" placeholder="Last Name" required>
                                 </div>
                             </div>
-                            {{-- <label>Address</label>
+                            <label>Address</label>
                             <div class="form-row">
                                     <div class="form-group col-md-4">
                                         <input name="address" type="text" class="form-control" id="address" placeholder="Street Address" required>
@@ -73,15 +73,15 @@
                             <label>Language</label>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <input name="language1" type="text" class="form-control" id="language1" placeholder="First Language" required>
+                                    <input name="language1" type="text" class="form-control" id="language1" placeholder="First Language">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <input name="language2" type="text" class="form-control" id="language2" placeholder="Second Language" required>
+                                    <input name="language2" type="text" class="form-control" id="language2" placeholder="Second Language">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <input name="language3" type="text" class="form-control" id="language3" placeholder="Third Language" required>
+                                    <input name="language3" type="text" class="form-control" id="language3" placeholder="Third Language">
                                 </div>
-                            </div> --}}
+                            </div>
                             {{-- <input type="submit" name="title" class="py-2 px-2 border rounded" />
                             <input type="submit" value="Create" class="p-2 border rounded" /> --}}
                         <br>

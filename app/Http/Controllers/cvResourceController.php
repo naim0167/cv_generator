@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\cv;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+use App\Http\Requests\cvcreaterequest;
+use Illuminate\Support\Facades\Validator;
 
 class cvResourceController extends Controller
 {
@@ -33,7 +35,7 @@ class cvResourceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(cvcreaterequest $request)
     {
         cv::create($request->all());
         return redirect()->back()->with('message','CV data has been saved');

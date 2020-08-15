@@ -17,13 +17,36 @@ class CreateCvsTable extends Migration
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
+            $table->string('address');
+            $table->string('zipcode');
+            $table->string('city');
+            $table->string('phone')->nullable();
+            $table->string('mobile');
+            $table->string('cv_email');
+            $table->date('birthday');
+            $table->string('nationality');
+            $table->string('language1')->nullable();
+            $table->string('language2')->nullable();
+            $table->string('language3')->nullable();
             // $table->string('address');
             // $table->string('phone');
             $table->boolean('complete')->default(false);
             $table->timestamps();
         });
     }
-
+// firstname
+// lastname
+// address
+// zipcode
+// city
+// phone
+// mobile
+// cv_email
+// birthday
+// nationality
+// language1
+// language2
+// language3
     /**
      * Reverse the migrations.
      *
