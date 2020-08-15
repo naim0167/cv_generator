@@ -19,7 +19,7 @@ class CreateCvsTable extends Migration
             $table->string('lastname');
             // $table->string('address');
             // $table->string('phone');
-            $table->boolean('complete');
+            $table->boolean('complete')->default(false);
             $table->timestamps();
         });
     }

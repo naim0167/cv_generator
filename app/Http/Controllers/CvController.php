@@ -16,7 +16,7 @@ class CvController extends Controller
     }
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
     }
     public function edit()
     {

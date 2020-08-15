@@ -14,6 +14,7 @@
                     {{ __('You are logged in!') }}
                 <a href="{{route('cv.index')}}" class="m-5 bg-white-400 cursor-pointer rounded">CV =></a>
                 </div>
+                <x-alert />
                 <form action="/cv" method="post">
                     <div class="card-body">
                         <h2><b>First Part</b></h2>
@@ -23,62 +24,62 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="firstname">First Name</label>
-                                    <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
+                                    <input name="firstname" type="text" class="form-control" id="firstname" placeholder="First Name"  required>
                                 </div>
-                                {{-- <div class="form-group col-md-6">
+                                <div class="form-group col-md-6">
                                     <label for="Last Name">Last Name</label>
-                                    <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
-                                </div> --}}
+                                    <input name="lastname" type="text" class="form-control" id="lastname" placeholder="Last Name" required>
+                                </div>
                             </div>
                             {{-- <label>Address</label>
                             <div class="form-row">
                                     <div class="form-group col-md-4">
-                                        <input type="text" class="form-control" id="address" placeholder="Street Address" required>
+                                        <input name="address" type="text" class="form-control" id="address" placeholder="Street Address" required>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <input type="text" class="form-control" id="zipcode" placeholder="Zip Code" required>
+                                        <input name="zipcode" type="text" class="form-control" id="zipcode" placeholder="Zip Code" required>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <input type="text" class="form-control" id="city" placeholder="City" required>
+                                        <input name="city" type="text" class="form-control" id="city" placeholder="City" required>
                                     </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="phone">Telephone</label>
-                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Telephone Number">
+                                    <input name="phone" type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Telephone Number">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="mobile">Mobile Number</label>
-                                    <input type="tel" class="form-control" id="mobile" placeholder="Ex.: 01677796817" required>
+                                    <input name="mobile" type="tel" class="form-control" id="mobile" placeholder="Ex.: 01677796817" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="cv_email">Email address</label>
-                                    <input type="cv_email" class="form-control" id="cv_email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                    <input name="cv_email" type="cv_email" class="form-control" id="cv_email" aria-describedby="emailHelp" placeholder="Enter email" required>
                                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="birthday">Birthday:</label>
-                                    <input type="date" class="form-control" id="birthday" placeholder="Birthday" required>
+                                    <input name="birthday" type="date" class="form-control" id="birthday" placeholder="Birthday" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="nationality">Nationality</label>
-                                    <input type="text" class="form-control" id="nationality" placeholder="Enter Nationality" required>
+                                    <input name="nationality" type="text" class="form-control" id="nationality" placeholder="Enter Nationality" required>
                                 </div>
                             </div>
                             <label>Language</label>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <input type="text" class="form-control" id="language1" placeholder="First Language" required>
+                                    <input name="language1" type="text" class="form-control" id="language1" placeholder="First Language" required>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <input type="text" class="form-control" id="language2" placeholder="Second Language" required>
+                                    <input name="language2" type="text" class="form-control" id="language2" placeholder="Second Language" required>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <input type="text" class="form-control" id="language3" placeholder="Third Language" required>
+                                    <input name="language3" type="text" class="form-control" id="language3" placeholder="Third Language" required>
                                 </div>
                             </div> --}}
                             {{-- <input type="submit" name="title" class="py-2 px-2 border rounded" />

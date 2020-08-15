@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\cv;
 use Illuminate\Http\Request;
 
 class cvResourceController extends Controller
@@ -35,9 +35,8 @@ class cvResourceController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-        // cvResourceController::create($request->all());
-        // return redirect()->back()->with('message','Created Successfully');
+        cv::create($request->all());
+        return redirect()->back()->with('message','CV data has been saved');
     }
 
     /**
