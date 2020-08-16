@@ -18,10 +18,10 @@
                 <form action="/cv" method="post">
                     @csrf
                     <div class="card-body">
-                        <h2><b>First Part</b></h2>
+                        {{-- <h2><b>First Part</b></h2>
                         <hr>
-                        <br>
-                            <div class="form-row">
+                        <br> --}}
+                            {{-- <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="firstname">First Name</label>
                                     <input name="firstname" type="text" class="form-control" id="firstname" placeholder="First Name"  required>
@@ -81,13 +81,13 @@
                                 <div class="form-group col-md-4">
                                     <input name="language3" type="text" class="form-control" id="language3" placeholder="Third Language">
                                 </div>
-                            </div>
+                            </div> --}}
                             {{-- <input type="submit" name="title" class="py-2 px-2 border rounded" />
                             <input type="submit" value="Create" class="p-2 border rounded" /> --}}
-                        <br>
-                        <br>
+                        {{-- <br>
+                        <br> --}}
                     </div>
-                    <div class="card-body">
+                    {{-- <div class="card-body">
                         <h2><b>Second Part</b></h2>
                         <hr>
                         <div class="form-row">
@@ -96,7 +96,7 @@
                                 <textarea name ="profilesummary" class="ckeditor form-control" id="profilesummary"></textarea>
                             </div>
                         </div>
-                        {{-- <h5 for="professionalexperience">Professional Experience</h5>
+                        <h5 for="professionalexperience">Professional Experience</h5>
                         <hr>
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -128,10 +128,10 @@
                                 <label for="workdetails">Work you did : </label>
                                 <textarea name ="workdetails" class="form-control" id="workdetails" rows="3" cols="100"></textarea>
                             </div>
-                        </div> --}}
-                        {{-- <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button> --}}
-                    </div>
-                    {{-- <div class="card-body">
+                        </div>
+                        <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
+                    </div> --}}
+                    <div class="card-body">
                             @csrf
                             <h2><b>Third Part</b></h2>
                             <hr>
@@ -167,8 +167,8 @@
                                 </div>
                             </div>
                         <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
-                    </div> --}}
-                    <div class="card-body">
+                    </div>
+                    {{-- <div class="card-body">
                         <h2><b>Fourth Part</b></h2>
                         <hr>
                         <br>
@@ -185,7 +185,7 @@
                                     <textarea name="personalInterest" class="ckeditor form-control" id="personalInterest" rows="2" cols="100"></textarea>
                                 </div>
                             </div>
-                    </div>
+                    </div> --}}
                     {{-- <div class="card-body">
                         <h2><b>Final Part</b></h2>
                         <hr>

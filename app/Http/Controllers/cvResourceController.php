@@ -15,7 +15,8 @@ class cvResourceController extends Controller
      */
     public function index()
     {
-        return view('cvs.index');
+        $cvs = cv::all();
+        return view('cvs.index')->with(['cvs'=>$cvs]);
     }
 
     /**
@@ -61,7 +62,8 @@ class cvResourceController extends Controller
      */
     public function edit($id)
     {
-        //
+        dd($id);
+        // return view('cvs.edit');
     }
 
     /**
