@@ -28,8 +28,9 @@ class CreateCvsTable extends Migration
             $table->string('language1')->nullable();
             $table->string('language2')->nullable();
             $table->string('language3')->nullable();
-            // $table->string('address');
-            // $table->string('phone');
+            $table->text('profilesummary')->nullable();
+            $table->text('technicalSkills')->nullable();;
+            $table->text('personalInterest')->nullable();;
             $table->boolean('complete')->default(false);
             $table->timestamps();
         });

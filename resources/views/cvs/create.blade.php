@@ -16,11 +16,11 @@
                 </div>
                 <x-alert />
                 <form action="/cv" method="post">
+                    @csrf
                     <div class="card-body">
                         <h2><b>First Part</b></h2>
                         <hr>
                         <br>
-                            @csrf
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="firstname">First Name</label>
@@ -87,53 +87,51 @@
                         <br>
                         <br>
                     </div>
-                    {{-- <div class="card-body">
-                        <form action="" method="post">
-                            @csrf
-                            <h2><b>Second Part</b></h2>
-                            <hr>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="profilesummary">Profile Summary</label>
-                                    <textarea class="form-control" id="profilesummary" rows="3" cols="100"></textarea>
-                                </div>
-                            </div>
-                            <h5 for="professionalexperience">Professional Experience</h5>
-                            <hr>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="jobstartdate">Job Start Date</label>
-                                    <input type="date" class="form-control" id="jobstartdate" placeholder="Start Date">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="jobenddate">Job End Date</label>
-                                    <input type="date" class="form-control" id="jobenddate" aria-describedby="jobenddatehelp" placeholder="End Date">
-                                    <small id="jobenddatehelp" class="form-text text-muted">Please don't select it if you are currently working there</small>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="jobtitle">Job Title</label>
-                                    <input type="text" class="form-control" id="jobtitle" placeholder="Enter your job position">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="companyname">Company Name</label>
-                                    <input type="text" class="form-control" id="companyname" placeholder="Enter company name">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="jobcity">Job City</label>
-                                    <input type="text" class="form-control" id="jobcity" placeholder="Enter the place of work">
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="workdetails">Work you did : </label>
-                                    <textarea class="form-control" id="workdetails" rows="3" cols="100"></textarea>
-                                </div>
-                            </div>
-                        <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
-                    </div>
                     <div class="card-body">
+                        <h2><b>Second Part</b></h2>
+                        <hr>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="profilesummary">Profile Summary</label>
+                                <textarea name ="profilesummary" class="ckeditor form-control" id="profilesummary"></textarea>
+                            </div>
+                        </div>
+                        {{-- <h5 for="professionalexperience">Professional Experience</h5>
+                        <hr>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="jobstartdate">Job Start Date</label>
+                                <input name ="jobstartdate" type="date" class="form-control" id="jobstartdate" placeholder="Start Date">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="jobenddate">Job End Date</label>
+                                <input name ="jobenddate" type="date" class="form-control" id="jobenddate" aria-describedby="jobenddatehelp" placeholder="End Date">
+                                <small id="jobenddatehelp" class="form-text text-muted">Please don't select it if you are currently working there</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="jobtitle">Job Title</label>
+                                <input name ="jobtitle" type="text" class="form-control" id="jobtitle" placeholder="Enter your job position">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="companyname">Company Name</label>
+                                <input name ="companyname" type="text" class="form-control" id="companyname" placeholder="Enter company name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="jobcity">Job City</label>
+                                <input name ="jobcity" type="text" class="form-control" id="jobcity" placeholder="Enter the place of work">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="workdetails">Work you did : </label>
+                                <textarea name ="workdetails" class="form-control" id="workdetails" rows="3" cols="100"></textarea>
+                            </div>
+                        </div> --}}
+                        {{-- <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button> --}}
+                    </div>
+                    {{-- <div class="card-body">
                             @csrf
                             <h2><b>Third Part</b></h2>
                             <hr>
@@ -169,7 +167,7 @@
                                 </div>
                             </div>
                         <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
-                    </div>
+                    </div> --}}
                     <div class="card-body">
                         <h2><b>Fourth Part</b></h2>
                         <hr>
@@ -178,17 +176,17 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="technicalSkills">Technical Skill Set </label>
-                                    <textarea class="form-control" id="technicalSkills" rows="6" cols="100"></textarea>
+                                    <textarea name="technicalSkills" class="ckeditor form-control" id="technicalSkills" rows="6" cols="100"></textarea>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="personalInterest">Personal Interest</label>
-                                    <textarea class="form-control" id="personalInterest" rows="2" cols="100"></textarea>
+                                    <textarea name="personalInterest" class="ckeditor form-control" id="personalInterest" rows="2" cols="100"></textarea>
                                 </div>
                             </div>
                     </div>
-                    <div class="card-body">
+                    {{-- <div class="card-body">
                         <h2><b>Final Part</b></h2>
                         <hr>
                         <br>
@@ -198,12 +196,21 @@
                             <input type="file" name="image">
                             <input type="submit" value="Upload">
                     </div> --}}
+                    <br><br>
                     <input class="btn btn-success" style="float: right;" type="submit" value="Submit" >
                     <br>
+
                 </form>
             </div>
         </div>
     </div>
 </div>
+{{-- fetching all text area for ckeditor --}}
+<script>
+    var allEditors = document.querySelectorAll('.ckeditor');
+    for (var i = 0; i < allEditors.length; ++i) {
+    ClassicEditor.create(allEditors[i]);
+    }
+</script>
 @endsection
 

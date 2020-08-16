@@ -37,6 +37,7 @@ class cvResourceController extends Controller
      */
     public function store(cvcreaterequest $request)
     {
+        // dd($request->all());
         cv::create($request->all());
         return redirect()->back()->with('message','CV data has been saved');
     }

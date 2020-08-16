@@ -30,7 +30,6 @@ class cvcreaterequest extends FormRequest
             'address' => 'required|max:255',
             'zipcode' => 'required|max:255',
             'city' => 'required|max:255',
-            'phone' => 'required|max:25',
             'mobile' => 'required|max:25',
             'cv_email' => 'required|max:255',
             'birthday' => 'required',

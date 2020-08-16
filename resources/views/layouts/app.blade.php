@@ -11,12 +11,21 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+    {{-- <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script> --}}
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    {{-- ck editor height problem --}}
+    <style>
+    .ck-editor__editable {
+        min-height: 150px !important;
+        max-height: 400px !important;
+    }
+    </style>
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
