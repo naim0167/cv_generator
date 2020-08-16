@@ -15,15 +15,39 @@ class CreateCvsTable extends Migration
     {
         Schema::create('cvs', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('address');
-            $table->string('phone');
-            $table->boolean('complete');
+            $table->string('zipcode');
+            $table->string('city');
+            $table->string('phone')->nullable();
+            $table->string('mobile');
+            $table->string('cv_email');
+            $table->date('birthday');
+            $table->string('nationality');
+            $table->string('language1')->nullable();
+            $table->string('language2')->nullable();
+            $table->string('language3')->nullable();
+            $table->text('profilesummary')->nullable();
+            $table->text('technicalSkills')->nullable();;
+            $table->text('personalInterest')->nullable();;
+            $table->boolean('complete')->default(false);
             $table->timestamps();
         });
     }
-
+// firstname
+// lastname
+// address
+// zipcode
+// city
+// phone
+// mobile
+// cv_email
+// birthday
+// nationality
+// language1
+// language2
+// language3
     /**
      * Reverse the migrations.
      *

@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('/cv', 'cvResourceController');
+// Route::get('/cvs', 'cvController@index');
+// Route::get('/cvs/create','cvController@create');
+// Route::post('/cvs/create','cvController@store');
+// Route::get('/cvs/edit','cvController@edit');
 Route::post('/upload', 'UserController@uploadAvatar');
 Route::get('/', 'UserController@welcome');
 Route::get('/user','UserController@index');
