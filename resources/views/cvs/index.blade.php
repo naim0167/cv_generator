@@ -8,11 +8,11 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 @foreach ($cvs as $cv)
-                <a href="{{'/cvs/'.$cv->id.'/edit'}}" class="right">EDIT</a>
+                <a href="{{route('cv.edit',$cv->id)}}" class="right">EDIT</a>
                 <div class="row card-body" style="padding:0 1rem 1rem 1rem">
                     <div class="col-md-4 pt-5" style="background-color:#e6e6e6" >
                         <center>
-                            <h1>{{Auth::user()->name}}</h1>
+                            <h1>{{$cv->firstname}} {{$cv->lastname}}</h1>
                             <img src="{{asset('/storage/images/'.Auth::user()->avatar)}}" alt="avatar" width="200" height="200">
                         </center>
                         <div style="margin-left:2.2rem;margin-top:2rem">

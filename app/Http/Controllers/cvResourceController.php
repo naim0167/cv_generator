@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\cv;
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use App\Http\Requests\cvcreaterequest;
 use Illuminate\Support\Facades\Validator;
 
@@ -60,10 +60,9 @@ class cvResourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(cv $cv)
     {
-        dd($id);
-        // return view('cvs.edit');
+        return view('cvs.edit',compact('cv'));
     }
 
     /**
@@ -73,9 +72,28 @@ class cvResourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(cvcreaterequest $request,cv $cv)
     {
-        //
+        $request->validate();
+        $cv->update([
+            'firstname'=>$request->firstname,
+            'lastname'=>$request->lastname,
+            'address'=>$request->address,
+            'zipcode'=>$request->zipcode,
+            'city'=>$request->city,
+            'phone'=>$request->phone,
+            'mobile'=>$request->mobile,
+            'cv_email'=>$request->cv_email,
+            'birthday'=>$request->birthday,
+            'nationality'=>$request->nationality,
+            'language1'=>$request->language1,
+            'language2'=>$request->language2,
+            'language3'=>$request->language3,
+            'profilesummary'=>$request->profilesummary,
+            'technicalSkills'=>$request->technicalSkills,
+            'personalInterest'=>$request->personalInterest
+        ]);
+        return redirect(route('cv.edit',$cv->id) )->with('message','Updated!');
     }
 
     /**

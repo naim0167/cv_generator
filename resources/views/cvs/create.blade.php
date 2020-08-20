@@ -15,7 +15,7 @@
                 <a href="{{route('cv.index')}}" class="m-5 bg-white-400 cursor-pointer rounded">CV =></a>
                 </div>
                 <x-alert />
-                <form action="/cv" method="post">
+                <form action="{{route('cv.store')}}" method="post">
                     @csrf
                     <div class="card-body">
                         {{-- <h2><b>First Part</b></h2>
