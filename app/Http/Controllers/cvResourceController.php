@@ -13,6 +13,11 @@ class cvResourceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
+
     public function index()
     {
         $cvs = cv::all();
@@ -102,8 +107,11 @@ class cvResourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+
+    public function destroy(cv $cv)
     {
-        //
+        // dd($cv);
+        $cv->delete();
+        return redirect(route('cv.index'))->with('message','Record Deleted!');
     }
 }

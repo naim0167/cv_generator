@@ -2,13 +2,31 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Dashboard') }}
+                    <x-alert />
+                </div>
                 @foreach ($cvs as $cv)
                 <a href="{{route('cv.edit',$cv->id)}}" class="right">EDIT</a>
+                {{-- Deleteing Form --}}
+                <div>
+                    <span class="button fas fa-times cursor-pointer" onclick="event.preventDefault();
+                                if(confirm('Are you really want to delete?')){
+                                document.getElementById('form-delete-{{$cv->id}}')
+                                .submit()
+                                }" />
+
+                    <form style="display:none" id="{{'form-delete-'.$cv->id}}" method="post"
+                        action="{{route('cv.destroy',$cv->id)}}">
+                        @csrf
+                        @method('delete')
+                    </form>
+                </div>
+
                 <div class="row card-body" style="padding:0 1rem 1rem 1rem">
                     <div class="col-md-4 pt-5" style="background-color:#e6e6e6" >
                         <center>
