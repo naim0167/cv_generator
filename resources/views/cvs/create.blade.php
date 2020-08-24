@@ -21,7 +21,7 @@
                         {{-- <h2><b>First Part</b></h2>
                         <hr>
                         <br> --}}
-                            {{-- <div class="form-row">
+                            <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="firstname">First Name</label>
                                     <input name="firstname" type="text" class="form-control" id="firstname" placeholder="First Name"  required>
@@ -81,13 +81,13 @@
                                 <div class="form-group col-md-4">
                                     <input name="language3" type="text" class="form-control" id="language3" placeholder="Third Language">
                                 </div>
-                            </div> --}}
+                            </div>
                             {{-- <input type="submit" name="title" class="py-2 px-2 border rounded" />
                             <input type="submit" value="Create" class="p-2 border rounded" /> --}}
                         {{-- <br>
                         <br> --}}
                     </div>
-                    {{-- <div class="card-body">
+                    <div class="card-body">
                         <h2><b>Second Part</b></h2>
                         <hr>
                         <div class="form-row">
@@ -121,8 +121,8 @@
                                 <input name ="companyname" type="text" class="form-control" id="companyname" placeholder="Enter company name">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="jobcity">Job City</label>
-                                <input name ="jobcity" type="text" class="form-control" id="jobcity" placeholder="Enter the place of work">
+                                <label for="joblocation">Job City</label>
+                                <input name ="joblocation" type="text" class="form-control" id="joblocation" placeholder="Enter the place of work">
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="workdetails">Work you did : </label>
@@ -130,7 +130,7 @@
                             </div>
                         </div>
                         <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
-                    </div> --}}
+                    </div>
                     <div class="card-body">
                             @csrf
                             <h2><b>Third Part</b></h2>
@@ -138,37 +138,37 @@
                             <div class="form-row">
                                 <div class="form-group col-md-8">
                                     <label for="educationalInstitute">Educational Institue Name</label>
-                                    <input type="text" class="form-control" id="educationalInstitute" placeholder="Enter your educational institues name">
+                                    <input type="text" name="educationalInstitute" class="form-control" id="educationalInstitute" placeholder="Enter your educational institues name">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="educationCountry">Country</label>
-                                    <input type="text" class="form-control" id="educationCountry" placeholder="Country Name">
+                                    <input type="text" name="educationCountry" class="form-control" id="educationCountry" placeholder="Country Name">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="degreeName">Degree Name</label>
-                                    <input type="text" class="form-control" id="degreeName" placeholder="ex.- Bachelor's/Masters'">
+                                    <input type="text" name="degreeName" class="form-control" id="degreeName" placeholder="ex.- Bachelor's/Masters'">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="subjectName">Subject Name</label>
-                                    <input type="text" class="form-control" id="subjectName" placeholder="ex.- Software Engineering">
+                                    <input type="text" name="subjectName" class="form-control" id="subjectName" placeholder="ex.- Software Engineering">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="educationstart">Start Date</label>
-                                    <input type="date" class="form-control" id="educationstart" placeholder="Start Date">
+                                    <input type="date" name="educationstart" class="form-control" id="educationstart" placeholder="Start Date">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="educationend">End Date</label>
-                                    <input type="date" class="form-control" id="educationend" aria-describedby="educationendhelp" placeholder="End Date">
+                                    <input type="date" name="educationend" class="form-control" id="educationend" aria-describedby="educationendhelp" placeholder="End Date">
                                     <small id="educationendhelp" class="form-text text-muted">Please don't select it if you are currently studing there</small>
                                 </div>
                             </div>
                         <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
                     </div>
-                    {{-- <div class="card-body">
+                    <div class="card-body">
                         <h2><b>Fourth Part</b></h2>
                         <hr>
                         <br>
@@ -185,8 +185,8 @@
                                     <textarea name="personalInterest" class="ckeditor form-control" id="personalInterest" rows="2" cols="100"></textarea>
                                 </div>
                             </div>
-                    </div> --}}
-                    {{-- <div class="card-body">
+                    </div>
+                    <div class="card-body">
                         <h2><b>Final Part</b></h2>
                         <hr>
                         <br>
@@ -195,7 +195,7 @@
                             <br>
                             <input type="file" name="image">
                             <input type="submit" value="Upload">
-                    </div> --}}
+                    </div>
                     <br><br>
                     <input class="btn btn-success" style="float: right;" type="submit" value="Submit" >
                     <br>

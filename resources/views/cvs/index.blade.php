@@ -10,6 +10,7 @@
                 <div class="card-header">{{ __('Dashboard') }}
                     <x-alert />
                 </div>
+                {{-- {{dd($educations)}} --}}
                 @foreach ($cvs as $cv)
                 <a href="{{route('cv.edit',$cv->id)}}" class="right">EDIT</a>
                 {{-- Deleteing Form --}}

@@ -35,19 +35,6 @@ class CreateCvsTable extends Migration
             $table->timestamps();
         });
     }
-// firstname
-// lastname
-// address
-// zipcode
-// city
-// phone
-// mobile
-// cv_email
-// birthday
-// nationality
-// language1
-// language2
-// language3
     /**
      * Reverse the migrations.
      *
