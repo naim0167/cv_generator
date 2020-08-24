@@ -99,12 +99,13 @@
                         </div>
                         <h5 for="professionalexperience">Professional Experience</h5>
                         <hr>
-                        {{-- value="{{$work->jobstartdate}}"
-                        value="{{$work->jobenddate}}"
-                        value="{{$work->jobtitle}}"
-                        value="{{$work->companyname}}"
-                        value="{{$work->joblocation}}"
-                        value="{{$work->workdetails}}" --}}
+                        {{-- {{dd($cvs_work)}}; --}}
+                        {{-- value="{{$cvs_work->jobstartdate}}"
+                        value="{{$cvs_work->jobenddate}}"
+                        value="{{$cvs_work->jobtitle}}"
+                        value="{{$cvs_work->companyname}}"
+                        value="{{$cvs_work->joblocation}}"
+                        value="{{$cvs_work->workdetails}}" --}}
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="jobstartdate">Job Start Date</label>

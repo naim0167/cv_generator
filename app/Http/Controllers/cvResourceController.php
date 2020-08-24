@@ -23,16 +23,10 @@ class cvResourceController extends Controller
 
     public function index()
     {
-        // $cvs = DB::table('cvs')->get();
-        // $works = DB::table('cvs_work')->get();
-        $cvs_educations = DB::table('cvs_educations')->get();
-        return view('cvs.index')->with(['cvs_educations'=>$cvs_educations]);
-        // return view('cvs.index')->with(['cvs'=>$cvs,'works'=>$works,'educations'=>$educations]);
-        // return view('user.index', ['users' => $users]);
-
-        // $cvs = cv::all();
-        // return view('cvs.index')->with(['cvs'=>$cvs]);
-
+        $cvs = DB::table('cvs')->get();
+        $works = DB::table('cvs_work')->get();
+        $educations = DB::table('cvs_education')->get();
+        return view('cvs.index')->with(['cvs'=>$cvs,'works'=>$works,'educations'=>$educations]);
     }
 
     /**
@@ -110,11 +104,15 @@ class cvResourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(cv $cv)
+    // public function edit(cv $cv)
+    public function edit(cv $cv, cvs_work $cvs_work, cvs_education $cvs_education)
     {
-        return view('cvs.edit',compact('cv'));
+        $cv = cv::find($cv->id);
+        $cvs_work = cvs_work::all();
+        $cvs_education = cvs_education::all();
+        return view('cvs.edit',compact('cv' , 'cvs_work', 'cvs_education'));
+        // return view('cvs.edit',compact('cv'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -122,7 +120,7 @@ class cvResourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,cv $cv)
+    public function update(Request $request,cv $cv, cvs_work $work, cvs_education $education)
     {
         // $request->validate();
         $validatedData = $request->validate([

@@ -10,7 +10,6 @@
                 <div class="card-header">{{ __('Dashboard') }}
                     <x-alert />
                 </div>
-                {{-- {{dd($educations)}} --}}
                 @foreach ($cvs as $cv)
                 <a href="{{route('cv.edit',$cv->id)}}" class="right">EDIT</a>
                 {{-- Deleteing Form --}}
@@ -58,41 +57,29 @@
                         </div>
                     </div>
                     <div class="col-md-8 pt-5 px-4" style="line-height:125%">
+                        @foreach ($works as $work)
                         <h2 style="border-bottom: 0.2rem solid #e6e6e6"><b>Profile Summary</b></h2>
                         <h5 class="pr-4 pt-1 text-justify">{!!$cv->profilesummary!!}</h5>
                         <br>
                         <h2 style="border-bottom: 0.2rem solid #e6e6e6"><b>Professional Experience</b></h2>
-                        <h6><b style="float:right">03/2019 – Current</b></h6>
+                        <h6><b style="float:right">{{$work->job_start_date}} – {{$work->job_end_date}}</b></h6>
                         <br><br>
                         <h3><b>
-                            Web Application Developer at Helfende Franken in Weismain
+                        {{$work->job_title}} at {{$work->company_name}} in {{$work->job_location}}
                         </b></h3>
                         <br>
                         <div style="padding:0 5% 0 5%">
-                            <h5>
-                                • The responsibility is to work with the team and create modules using web technologies for the company.
-                            </h5>
-                            <h5>
-                                • The responsibility is to work with the team and create modules using web technologies for the company.
-                            </h5>
-                            <h5>
-                                • Developed client relationship database, contract generator, job portal, ticket system etc.
-                            </h5>
-                            <h5>
-                                • Also worked with SIPGATE, REST API & MVC design pattern.
-                            </h5>
+                            <h5>{{$work->workdetails}}</h5>
                         </div>
+                        @endforeach
                         <br>
+                        @foreach ($educations as $education)
                         <h2 style="border-bottom: 0.2rem solid #e6e6e6"><b>Education</b></h2>
-                        <h6><b style="float:right">01/2013 – 01/2017</b></h6>
+                        <h6><b style="float:right">{{$education->education_start_date}} – {{$education->education_end_date}}</b></h6>
                         <br><br>
-                        <h3><b>Bachelor’s in Software Engineering</b></h3>
-                        <h5 class="pr-4 pt-1 text-justify">– Daffodil International University, Bangladesh</h5>
-                        <br>
-                        <h6><b style="float:right">10/2018 – Current</b></h6>
-                        <br><br>
-                        <h3><b>Master’s in International Software System Science</b></h3>
-                        <h5 class="pr-4 pt-1 text-justify">– Otto-Friedrich-University Bamberg, Germany</h5>
+                        <h3><b>{{$education->education_degree}} in {{$education->education_subject}}</b></h3>
+                        <h5 class="pr-4 pt-1 text-justify">– {{$education->education_institute}}, {{$education->education_location}}</h5>
+                        @endforeach
                         <br>
                         <h2 style="border-bottom: 0.2rem solid #e6e6e6"><b>Technical Skill</b></h2>
                         <br>
