@@ -15,6 +15,8 @@
                     <a href="{{route('cv.index')}}" class="m-5 bg-white-400 cursor-pointer rounded">CV =></a>
                 </div>
                 <x-alert />
+                @foreach ($users as $cv)
+                {{-- {!!dd($cv->job_start_date)!!} --}}
                 <form action="{{route('cv.update',$cv->id)}}" method="post">
                     @method('PATCH')
                     @csrf
@@ -99,42 +101,42 @@
                         </div>
                         <h5 for="professionalexperience">Professional Experience</h5>
                         <hr>
-                        {{-- {{dd($cvs_work)}}; --}}
+                        {{-- {{dd($cv)}}; --}}
                         {{-- value="{{$cvs_work->jobstartdate}}"
                         value="{{$cvs_work->jobenddate}}"
                         value="{{$cvs_work->jobtitle}}"
-                        value="{{$cvs_work->companyname}}"
+                        value="{{$cvs_work->company_name}}"
                         value="{{$cvs_work->joblocation}}"
                         value="{{$cvs_work->workdetails}}" --}}
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="jobstartdate">Job Start Date</label>
-                                <input name ="jobstartdate" type="date" class="form-control" id="jobstartdate" placeholder="Start Date">
+                                <input name ="jobstartdate" type="date" class="form-control" id="jobstartdate" placeholder="Start Date" value="{{$cv->job_start_date}}">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="jobenddate">Job End Date</label>
-                                <input name ="jobenddate" type="date" class="form-control" id="jobenddate" aria-describedby="jobenddatehelp" placeholder="End Date" >
+                                <input name ="jobenddate" type="date" class="form-control" id="jobenddate" aria-describedby="jobenddatehelp" placeholder="End Date" value="{{$cv->job_end_date}}">
                                 <small id="jobenddatehelp" class="form-text text-muted">Please don't select it if you are currently working there</small>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="jobtitle">Job Title</label>
-                                <input name ="jobtitle" type="text" class="form-control" id="jobtitle" placeholder="Enter your job position" >
+                                <input name ="jobtitle" type="text" class="form-control" id="jobtitle" placeholder="Enter your job position" value="{{$cv->job_title}}">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="companyname">Company Name</label>
-                                <input name ="companyname" type="text" class="form-control" id="companyname" placeholder="Enter company name" >
+                                <input name ="companyname" type="text" class="form-control" id="companyname" placeholder="Enter company name" value="{{$cv->company_name}}">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="joblocation">Job City</label>
-                                <input name ="joblocation" type="text" class="form-control" id="joblocation" placeholder="Enter the place of work" >
+                                <input name ="joblocation" type="text" class="form-control" id="joblocation" placeholder="Enter the place of work" value="{{$cv->job_location}}">
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="workdetails">Work you did : </label>
-                                <textarea name ="workdetails" class="form-control" id="workdetails" rows="3" cols="100"></textarea>
+                                <textarea name ="workdetails" class="ckeditor form-control" id="workdetails" rows="6" cols="100">{{$cv->workdetails}}</textarea>
                             </div>
                         </div>
                         <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
@@ -146,38 +148,32 @@
                         <div class="form-row">
                             <div class="form-group col-md-8">
                                 <label for="educationalInstitute">Educational Institue Name</label>
-                                <input type="text" class="form-control" id="educationalInstitute"
-                                    placeholder="Enter your educational institues name">
+                                <input name ="educationalInstitute" type="text" class="form-control" id="educationalInstitute"  placeholder="Enter your educational institues name" value="{{$cv->education_institute}}">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="educationCountry">Country</label>
-                                <input type="text" class="form-control" id="educationCountry"
-                                    placeholder="Country Name">
+                                <input name ="educationCountry" type="text" class="form-control" id="educationCountry" placeholder="Country Name" value="{{$cv->education_location}}">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="degreeName">Degree Name</label>
-                                <input type="text" class="form-control" id="degreeName"
-                                    placeholder="ex.- Bachelor's/Masters'">
+                                <input name ="degreeName" type="text" class="form-control" id="degreeName" placeholder="ex.- Bachelor's/Masters'" value="{{$cv->education_degree}}">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="subjectName">Subject Name</label>
-                                <input type="text" class="form-control" id="subjectName"
-                                    placeholder="ex.- Software Engineering">
+                                <input name ="subjectName" type="text" class="form-control" id="subjectName" placeholder="ex.- Software Engineering" value="{{$cv->education_subject}}">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="educationstart">Start Date</label>
-                                <input type="date" class="form-control" id="educationstart" placeholder="Start Date">
+                                <input name ="educationstart" type="date" class="form-control" id="educationstart" placeholder="Start Date" value="{{$cv->education_start_date}}">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="educationend">End Date</label>
-                                <input type="date" class="form-control" id="educationend"
-                                    aria-describedby="educationendhelp" placeholder="End Date">
-                                <small id="educationendhelp" class="form-text text-muted">Please don't select it if you
-                                    are currently studing there</small>
+                                <input name ="educationend" type="date" class="form-control" id="educationend" aria-describedby="educationendhelp" placeholder="End Date" value="{{$cv->education_end_date}}">
+                                <small id="educationendhelp" class="form-text text-muted">Please don't select it if you are currently studing there</small>
                             </div>
                         </div>
                         <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
@@ -213,7 +209,7 @@
                     <br><br>
                     <input class="btn btn-success" style="float: right;" type="submit" value="Update">
                     <br>
-
+                @endforeach
                 </form>
             </div>
         </div>

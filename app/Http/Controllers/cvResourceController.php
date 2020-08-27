@@ -107,11 +107,19 @@ class cvResourceController extends Controller
     // public function edit(cv $cv)
     public function edit(cv $cv, cvs_work $cvs_work, cvs_education $cvs_education)
     {
-        $cv = cv::find($cv->id);
-        $cvs_work = cvs_work::all();
-        $cvs_education = cvs_education::all();
-        return view('cvs.edit',compact('cv' , 'cvs_work', 'cvs_education'));
-        // return view('cvs.edit',compact('cv'));
+        $myId = $cv->id;
+        $users = DB::table('cvs')
+                ->join('cvs_work', function ($join_work) use($myId) {
+                    $join_work->on('cvs.id', '=', 'cvs_work.cv_id')
+                    ->where('cvs_work.cv_id', '=', $myId);
+                })
+                ->join('cvs_education', function ($join_education) use($myId) {
+                    $join_education->on('cvs.id', '=', 'cvs_education.cv_id')
+                    ->where('cvs_education.cv_id', '=', $myId);
+                })
+                ->select('cvs.*', 'cvs_work.*', 'cvs_education.*')
+            ->get();
+        return view('cvs.edit',compact('users'));
     }
     /**
      * Update the specified resource in storage.
@@ -122,7 +130,6 @@ class cvResourceController extends Controller
      */
     public function update(Request $request,cv $cv, cvs_work $work, cvs_education $education)
     {
-        // $request->validate();
         $validatedData = $request->validate([
             'firstname' =>'required|max:255',
             'lastname' => 'required|max:255',
@@ -180,10 +187,23 @@ class cvResourceController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy(cv $cv)
+    public function destroy(cv $cv, cvs_work $work, cvs_education $education)
     {
-        // dd($cv);
-        $cv->delete();
-        return redirect(route('cv.index'))->with('message','Record Deleted!');
+
+        // $cv->delete();
+        // $work = cvs_work::where('cv_id', $cv->id)->delete();
+        // $education = cvs_education::where('cv_id', $cv->id)->delete();
+
+        // DB::table('cvs')->where('id', '=', $cv->id)->delete();
+        // DB::table('cvs_education')->where('cv_id', '=', $cv->id)->delete();
+        // DB::table('cvs_work')->where('cv_id', '=', $cv->id)->delete();
+
+        // DB::table("cvs")->where("id", $cv->id)->delete();
+        // DB::table("cvs_education")->where("cv_id",$cv->id)->delete();
+        // DB::table("cvs_work")->where("cv_id", $cv->id)->delete();
+        // $cv->delete();
+        // $cv->delete();
+
+        // return redirect(route('cv.index'))->with('message','Record Deleted!');
     }
 }

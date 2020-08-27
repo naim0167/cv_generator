@@ -126,7 +126,7 @@
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="workdetails">Work you did : </label>
-                                <textarea name ="workdetails" class="form-control" id="workdetails" rows="3" cols="100"></textarea>
+                                <textarea name ="workdetails" class="ckeditor form-control" id="workdetails" rows="3" cols="100"></textarea>
                             </div>
                         </div>
                         <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>

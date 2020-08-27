@@ -69,7 +69,7 @@
                         </b></h3>
                         <br>
                         <div style="padding:0 5% 0 5%">
-                            <h5>{{$work->workdetails}}</h5>
+                            <h5>{!!$work->workdetails!!}</h5>
                         </div>
                         @endforeach
                         <br>
