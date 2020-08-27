@@ -189,21 +189,9 @@ class cvResourceController extends Controller
 
     public function destroy(cv $cv, cvs_work $work, cvs_education $education)
     {
-
-        // $cv->delete();
-        // $work = cvs_work::where('cv_id', $cv->id)->delete();
-        // $education = cvs_education::where('cv_id', $cv->id)->delete();
-
-        // DB::table('cvs')->where('id', '=', $cv->id)->delete();
-        // DB::table('cvs_education')->where('cv_id', '=', $cv->id)->delete();
-        // DB::table('cvs_work')->where('cv_id', '=', $cv->id)->delete();
-
-        // DB::table("cvs")->where("id", $cv->id)->delete();
-        // DB::table("cvs_education")->where("cv_id",$cv->id)->delete();
-        // DB::table("cvs_work")->where("cv_id", $cv->id)->delete();
-        // $cv->delete();
-        // $cv->delete();
-
-        // return redirect(route('cv.index'))->with('message','Record Deleted!');
+        DB::table('cvs_education')->where('cv_id', '=', $cv->id)->delete();
+        DB::table('cvs_work')->where('cv_id', '=', $cv->id)->delete();
+        DB::table('cvs')->where('id', '=', $cv->id)->delete();
+        return redirect(route('cv.index'))->with('message','Record Deleted!');
     }
 }
