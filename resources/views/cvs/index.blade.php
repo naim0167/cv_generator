@@ -58,27 +58,31 @@
                     </div>
                     <div class="col-md-8 pt-5 px-4" style="line-height:125%">
                         @foreach ($works as $work)
-                        <h2 style="border-bottom: 0.2rem solid #e6e6e6"><b>Profile Summary</b></h2>
-                        <h5 class="pr-4 pt-1 text-justify">{!!$cv->profilesummary!!}</h5>
-                        <br>
-                        <h2 style="border-bottom: 0.2rem solid #e6e6e6"><b>Professional Experience</b></h2>
-                        <h6><b style="float:right">{{$work->job_start_date}} – {{$work->job_end_date}}</b></h6>
-                        <br><br>
-                        <h3><b>
-                        {{$work->job_title}} at {{$work->company_name}} in {{$work->job_location}}
-                        </b></h3>
-                        <br>
-                        <div style="padding:0 5% 0 5%">
-                            <h5>{!!$work->workdetails!!}</h5>
-                        </div>
+                            @if($work->cv_id === $cv->id)
+                                <h2 style="border-bottom: 0.2rem solid #e6e6e6"><b>Profile Summary</b></h2>
+                                <h5 class="pr-4 pt-1 text-justify">{!!$cv->profilesummary!!}</h5>
+                                <br>
+                                <h2 style="border-bottom: 0.2rem solid #e6e6e6"><b>Professional Experience</b></h2>
+                                <h6><b style="float:right">{{$work->job_start_date}} – {{$work->job_end_date}}</b></h6>
+                                <br><br>
+                                <h3><b>
+                                {{$work->job_title}} at {{$work->company_name}} in {{$work->job_location}}
+                                </b></h3>
+                                <br>
+                                <div style="padding:0 5% 0 5%">
+                                    <h5>{!!$work->workdetails!!}</h5>
+                                </div>
+                            @endif
                         @endforeach
                         <br>
                         @foreach ($educations as $education)
-                        <h2 style="border-bottom: 0.2rem solid #e6e6e6"><b>Education</b></h2>
-                        <h6><b style="float:right">{{$education->education_start_date}} – {{$education->education_end_date}}</b></h6>
-                        <br><br>
-                        <h3><b>{{$education->education_degree}} in {{$education->education_subject}}</b></h3>
-                        <h5 class="pr-4 pt-1 text-justify">– {{$education->education_institute}}, {{$education->education_location}}</h5>
+                            @if($education->cv_id === $cv->id)
+                                <h2 style="border-bottom: 0.2rem solid #e6e6e6"><b>Education</b></h2>
+                                <h6><b style="float:right">{{$education->education_start_date}} – {{$education->education_end_date}}</b></h6>
+                                <br><br>
+                                <h3><b>{{$education->education_degree}} in {{$education->education_subject}}</b></h3>
+                                <h5 class="pr-4 pt-1 text-justify">– {{$education->education_institute}}, {{$education->education_location}}</h5>
+                            @endif
                         @endforeach
                         <br>
                         <h2 style="border-bottom: 0.2rem solid #e6e6e6"><b>Technical Skill</b></h2>
