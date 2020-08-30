@@ -4,15 +4,19 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('CV Generator') }}</div>
+                <div class="card-header" style="background-color: #CAC4CE">
+                    <a href="{{route('cv.index')}}" class="bg-white-400 cursor-pointer rounded">
+                        <span class="fas fa-arrow-circle-left" style="color:#725AC1" /> CV Overview
+                    </a>
+                    <h3 style="color:#242038; font-weight:bold; text-align:center"> CV GENERATOR</h3>
+                </div>
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
-                    {{ __('You are logged in!') }}
-                <a href="{{route('cv.index')}}" class="m-5 bg-white-400 cursor-pointer rounded">CV =></a>
+
                 </div>
                 <x-alert />
                 <form action="{{route('cv.store')}}" method="post">
@@ -135,7 +139,7 @@
                             @csrf
                             <h2><b>Third Part</b></h2>
                             <hr>
-                            <div class="form-row">
+                            {{-- <div class="form-row">
                                 <div class="form-group col-md-8">
                                     <label for="educationalInstitute">Educational Institue Name</label>
                                     <input type="text" name="educationalInstitute" class="form-control" id="educationalInstitute" placeholder="Enter your educational institues name">
@@ -165,8 +169,11 @@
                                     <input type="date" name="educationend" class="form-control" id="educationend" aria-describedby="educationendhelp" placeholder="End Date">
                                     <small id="educationendhelp" class="form-text text-muted">Please don't select it if you are currently studing there</small>
                                 </div>
-                            </div>
-                        <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
+                            </div> --}}
+                        @livewire('addmore')
+                        {{-- <span class="btn btn-success fas fa-plus" style="cursor:pointer;float:right;font-weight:bold"> ADD MORE </span> --}}
+
+                        {{-- <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button> --}}
                     </div>
                     <div class="card-body">
                         <h2><b>Fourth Part</b></h2>
@@ -196,10 +203,8 @@
                             <input type="file" name="image">
                             <input type="submit" value="Upload">
                     </div>
-                    <br><br>
-                    <input class="btn btn-success" style="float: right;" type="submit" value="Submit" >
-                    <br>
-
+                    <input class="btn btn-success mr-3" style="float:right;" type="submit" value="Submit" >
+                    <br><br><br>
                 </form>
             </div>
         </div>

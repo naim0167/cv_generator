@@ -10,23 +10,27 @@
                 <div class="card-header">{{ __('Dashboard') }}
                     <x-alert />
                 </div>
-                @foreach ($cvs as $cv)
-                <a href="{{route('cv.edit',$cv->id)}}" class="right">EDIT</a>
-                {{-- Deleteing Form --}}
-                <div>
-                    <span class="button fas fa-times cursor-pointer" onclick="event.preventDefault();
-                                if(confirm('Are you really want to delete?')){
-                                document.getElementById('form-delete-{{$cv->id}}')
-                                .submit()
-                                }" />
-
-                    <form style="display:none" id="{{'form-delete-'.$cv->id}}" method="post"
-                        action="{{route('cv.destroy',$cv->id)}}">
+                @forelse ($cvs as $cv)
+                <div class="mr-4 mt-2" style="text-align:right">
+                    <a href="{{route('cv.create')}}">
+                        <span class="fas fa-plus-circle" style="font-size:2em;color:#222543" />
+                    </a>
+                    <a href="{{route('cv.edit',$cv->id)}}" >
+                        <span class="fas fa-edit pr-3 pl-3" style="font-size:2em;color:#104547"/>
+                    </a>
+                    <span class="button fas fa-trash" style="font-size:2em;color:#b93d48;cursor: pointer;" onclick="event.preventDefault();
+                    if(confirm('Are you really want to delete?')){
+                    document.getElementById('form-delete-{{$cv->id}}')
+                    .submit()
+                    }" />
+                    <form style="display:none" id="{{'form-delete-'.$cv->id}}" method="post" action="{{route('cv.destroy',$cv->id)}}">
                         @csrf
                         @method('delete')
                     </form>
                 </div>
 
+                {{-- Deleteing Form --}}
+                {{-- @if($cvs->count() > 0) --}}
                 <div class="row card-body" style="padding:0 1rem 1rem 1rem">
                     <div class="col-md-4 pt-5" style="background-color:#e6e6e6" >
                         <center>
@@ -63,7 +67,7 @@
                                 <h5 class="pr-4 pt-1 text-justify">{!!$cv->profilesummary!!}</h5>
                                 <br>
                                 <h2 style="border-bottom: 0.2rem solid #e6e6e6"><b>Professional Experience</b></h2>
-                                <h6><b style="float:right">{{$work->job_start_date}} – {{$work->job_end_date}}</b></h6>
+                                <h6><b style="float:right">{{$work->job_start_date}} – {{$work->job_end_date ?? 'Current'}}</b></h6>
                                 <br><br>
                                 <h3><b>
                                 {{$work->job_title}} at {{$work->company_name}} in {{$work->job_location}}
@@ -99,20 +103,23 @@
                         <br>
                     </div>
                 </div>
+                {{-- @else
+                <p style="text-align: center"> Nothing to show, Create one.</p>
+                @endif --}}
                 <br><br><hr><center>END</center><hr>
-                @endforeach
+                @empty
+                <p style="text-align: center"> Nothing to show, Create one.</p>
+                @endforelse
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
-                    {{ __('You are logged in!') }}
                 </div>
-                <a href="{{route('cv.create')}}" class="btn btn-warning mx-5 py-2 curson pointer">
-                    {{-- <span class="fas fa-plus-circle"></span> --}} GO TO INDEX
-                </a>
+
                 <br>
+
                 {{-- <div class="image-container">
                                     <img src="{{asset('/storage/images/'.Auth::user()->avatar)}}" alt="avatar" width="40" height="30">
                 </div> --}}

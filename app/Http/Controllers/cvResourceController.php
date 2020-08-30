@@ -194,4 +194,5 @@ class cvResourceController extends Controller
         DB::table('cvs')->where('id', '=', $cv->id)->delete();
         return redirect(route('cv.index'))->with('message','Record Deleted!');
     }
+
 }
