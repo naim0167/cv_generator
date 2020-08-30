@@ -36,4 +36,9 @@ class cvcreaterequest extends FormRequest
             'nationality' => 'required|max:255',
         ];
     }
+    public function message(){
+        return[
+            'title.max'=>'The field should not be greater then 255 characters.'
+        ];
+    }
 }
