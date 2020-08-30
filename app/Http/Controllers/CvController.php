@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use app\cv;
 class CvController extends Controller
 {
     public function index()
