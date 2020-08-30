@@ -5,20 +5,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="row">
-                <div class="col-4 m-0 p-0">
+                <div class="col-4 m-0 p-0"style="height: 100em; background:#104547" >
                     <div class="card">
-                        <div class="card-header text-center" style="font-weight:bold;color:#9823db;"><span class="fas fa-chalkboard-teacher" style="color:#725AC1;"></span> {{ __('DASHBOARD') }}</div>
+                        <div class="card-header text-center" style="font-weight:bold;color:#9823db;background-color: #CAC4CE"><span class="fas fa-chalkboard-teacher" style="color:#725AC1;"></span> {{ __('DASHBOARD') }}</div>
                         <div class="card-body" style="border: 1px solid white;background-color:#104547">
                             <div class="col text-center">
                                 <a href="{{route('cv.create')}}">
-                                    <span class="fas fa-plus-circle" style="font-size:1rem;color:#fff;" /> Add a new CV
+                                    <span class="fas fa-plus-circle" style="font-size:1rem;color:#fff;"/> Add a new CV
                                 </a>
                             </div>
                         </div>
-                        <div class="card-body" style="border: 1px solid white;background-color:#104547">
+                        <div class="card-body" style="border: 1px solid white;background-color:#104547;">
                             <div class="col text-center">
                                 <a href="{{route('cv.index')}}">
-                                    <span class="fas fa-clipboard-list" style="font-size:1rem;color:#fff;" /> CV List
+                                    <span class="fas fa-clipboard-list" style="font-size:1rem;color:#fff;"/> CV List
                                 </a>
                             </div>
                         </div>
@@ -41,16 +41,11 @@
                                 </form>
                             </div>
                         </div>
-
-                        <div class="card-body" style="border: 1px solid white;background-color:#104547">
-
-                        </div>
-
                     </div>
                 </div>
                 <div class="col-8 m-0 p-0">
                     <div class="card">
-                        <div class="card-header text-center" style="font-weight:bold;color:#104547;">{{ __('CV OVERVIEW') }}</div>
+                        <div class="card-header text-center fas fa-file-pdf" style="font-weight:bold;color:#104547;background-color: #CAC4CE"> {{ __('CV OVERVIEW') }}</div>
 
                         <div class="card-body">
                             {{-- @if (session('status'))

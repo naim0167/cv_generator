@@ -5,8 +5,11 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header" style="background-color: #CAC4CE">
-                    <a href="{{route('cv.index')}}" class="bg-white-400 cursor-pointer rounded">
-                        <span class="fas fa-arrow-circle-left" style="color:#725AC1" /> CV Overview
+                    <a href="{{route('cv.index')}}" class="bg-white-400 cursor-pointer rounded" style="color:#725AC1;float:right;font-weight:bold">
+                        CV Overview <span class="fas fa-arrow-circle-right" />
+                    </a>
+                    <a href="/home" class="bg-white-400 cursor-pointer rounded">
+                        <span class="fas fa-arrow-circle-left" style="color:#725AC1" /> Home
                     </a>
                     <h3 style="color:#242038; font-weight:bold; text-align:center"> CV GENERATOR</h3>
                 </div>
