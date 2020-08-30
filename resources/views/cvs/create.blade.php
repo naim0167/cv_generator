@@ -138,46 +138,54 @@
                         <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
                     </div>
 
-                    <div class="card-body">
-                            @csrf
-                            <h2><b>Third Part</b></h2>
-                            <hr>
-                            <div class="form-row">
-                                <div class="form-group col-md-8">
-                                    <label for="educationalInstitute">Educational Institue Name</label>
-                                    <input type="text" name="educationalInstitute" class="form-control" id="educationalInstitute" placeholder="Enter your educational institues name">
+                    <div id="third-section">
+                        <div id="third-section-body">
+                            <div class="card-body">
+                                <h2><b>Third Part 1</b></h2>
+                                <hr>
+                                <div class="form-row">
+                                    <div class="form-group col-md-8">
+                                        <label for="educationalInstitute_1">Educational Institue Name</label>
+                                        <input type="text" name="educationalInstitute_1" class="form-control" id="educationalInstitute_1" placeholder="Enter your educational institues name">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="educationCountry_1">Country</label>
+                                        <input type="text" name="educationCountry_1" class="form-control" id="educationCountry_1" placeholder="Country Name">
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label for="educationCountry">Country</label>
-                                    <input type="text" name="educationCountry" class="form-control" id="educationCountry" placeholder="Country Name">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="degreeName_1">Degree Name</label>
+                                        <input type="text" name="degreeName_1" class="form-control" id="degreeName_1" placeholder="ex.- Bachelor's/Masters'">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="subjectName_1">Subject Name</label>
+                                        <input type="text" name="subjectName_1" class="form-control" id="subjectName_1" placeholder="ex.- Software Engineering">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="educationstart_1">Start Date</label>
+                                        <input type="date" name="educationstart_1" class="form-control" id="educationstart_1" placeholder="Start Date">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="educationend_1">End Date</label>
+                                        <input type="date" name="educationend_1" class="form-control" id="educationend_1" aria-describedby="educationendhelp_1" placeholder="End Date">
+                                        <small id="educationendhelp_1" class="form-text text-muted">Please don't select it if you are currently studing there</small>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="degreeName">Degree Name</label>
-                                    <input type="text" name="degreeName" class="form-control" id="degreeName" placeholder="ex.- Bachelor's/Masters'">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="subjectName">Subject Name</label>
-                                    <input type="text" name="subjectName" class="form-control" id="subjectName" placeholder="ex.- Software Engineering">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="educationstart">Start Date</label>
-                                    <input type="date" name="educationstart" class="form-control" id="educationstart" placeholder="Start Date">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="educationend">End Date</label>
-                                    <input type="date" name="educationend" class="form-control" id="educationend" aria-describedby="educationendhelp" placeholder="End Date">
-                                    <small id="educationendhelp" class="form-text text-muted">Please don't select it if you are currently studing there</small>
-                                </div>
-                            </div>
-                        {{-- @livewire('addmore') --}}
-                        {{-- <span class="btn btn-success fas fa-plus" style="cursor:pointer;float:right;font-weight:bold"> ADD MORE </span> --}}
 
-                        <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
-                    </div>02
+                        </div>
+
+
+                        <!-- add more button -->
+                        <div class="card-body">
+                            <button type="button" class="btn btn-success" style="float: right;" id="add_third_section_button"><b>+ ADD MORE</b></button>
+                        </div>
+
+
+                    </div>
 
                     <div class="card-body">
                         <h2><b>Fourth Part</b></h2>
@@ -220,6 +228,55 @@
     for (var i = 0; i < allEditors.length; ++i) {
     ClassicEditor.create(allEditors[i]);
     }
+
+    var currentThirdSectionNumber = 1;
+
+    $(document).ready(function () {
+
+        $(document).on('click', '#add_third_section_button', function () {
+            currentThirdSectionNumber++;
+            var html = '<div class="card-body">\n' +
+                        '    <h2><b>Third Part '+ currentThirdSectionNumber +'</b></h2>\n' +
+                        '    <hr>\n' +
+                        '    <div class="form-row">\n' +
+                        '        <div class="form-group col-md-8">\n' +
+                        '            <label for="educationalInstitute_'+currentThirdSectionNumber+'">Educational Institue Name</label>\n' +
+                        '            <input type="text" name="educationalInstitute_'+currentThirdSectionNumber+'" class="form-control" id="educationalInstitute_'+currentThirdSectionNumber+'" placeholder="Enter your educational institues name">\n' +
+                        '        </div>\n' +
+                        '        <div class="form-group col-md-4">\n' +
+                        '            <label for="educationCountry_'+currentThirdSectionNumber+'">Country</label>\n' +
+                        '            <input type="text" name="educationCountry_'+currentThirdSectionNumber+'" class="form-control" id="educationCountry_'+currentThirdSectionNumber+'" placeholder="Country Name">\n' +
+                        '        </div>\n' +
+                        '    </div>\n' +
+                        '    <div class="form-row">\n' +
+                        '        <div class="form-group col-md-6">\n' +
+                        '            <label for="degreeName_'+currentThirdSectionNumber+'">Degree Name</label>\n' +
+                        '            <input type="text" name="degreeName_'+currentThirdSectionNumber+'" class="form-control" id="degreeName_'+currentThirdSectionNumber+'" placeholder="ex.- Bachelor\'s/Masters\'">\n' +
+                        '        </div>\n' +
+                        '        <div class="form-group col-md-6">\n' +
+                        '            <label for="subjectName_'+currentThirdSectionNumber+'">Subject Name</label>\n' +
+                        '            <input type="text" name="subjectName_'+currentThirdSectionNumber+'" class="form-control" id="subjectName_'+currentThirdSectionNumber+'" placeholder="ex.- Software Engineering">\n' +
+                        '        </div>\n' +
+                        '    </div>\n' +
+                        '    <div class="form-row">\n' +
+                        '        <div class="form-group col-md-6">\n' +
+                        '            <label for="educationstart_'+currentThirdSectionNumber+'">Start Date</label>\n' +
+                        '            <input type="date" name="educationstart_'+currentThirdSectionNumber+'" class="form-control" id="educationstart_'+currentThirdSectionNumber+'" placeholder="Start Date">\n' +
+                        '        </div>\n' +
+                        '        <div class="form-group col-md-6">\n' +
+                        '            <label for="educationend_'+currentThirdSectionNumber+'">End Date</label>\n' +
+                        '            <input type="date" name="educationend_'+currentThirdSectionNumber+'" class="form-control" id="educationend_'+currentThirdSectionNumber+'" aria-describedby="educationendhelp_'+currentThirdSectionNumber+'" placeholder="End Date">\n' +
+                        '            <small id="educationendhelp_'+currentThirdSectionNumber+'" class="form-text text-muted">Please don\'t select it if you are currently studing there</small>\n' +
+                        '        </div>\n' +
+                        '    </div>\n' +
+                        '</div>';
+
+            $("#third-section-body").append(html);
+
+        });
+
+    });
+
 </script>
 @endsection
 
