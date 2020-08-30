@@ -177,7 +177,7 @@
                         {{-- <span class="btn btn-success fas fa-plus" style="cursor:pointer;float:right;font-weight:bold"> ADD MORE </span> --}}
 
                         <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
-                    </div>02
+                    </div>
 
                     <div class="card-body">
                         <h2><b>Fourth Part</b></h2>
