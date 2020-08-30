@@ -139,7 +139,7 @@
                             @csrf
                             <h2><b>Third Part</b></h2>
                             <hr>
-                            {{-- <div class="form-row">
+                            <div class="form-row">
                                 <div class="form-group col-md-8">
                                     <label for="educationalInstitute">Educational Institue Name</label>
                                     <input type="text" name="educationalInstitute" class="form-control" id="educationalInstitute" placeholder="Enter your educational institues name">
@@ -169,11 +169,11 @@
                                     <input type="date" name="educationend" class="form-control" id="educationend" aria-describedby="educationendhelp" placeholder="End Date">
                                     <small id="educationendhelp" class="form-text text-muted">Please don't select it if you are currently studing there</small>
                                 </div>
-                            </div> --}}
-                        @livewire('addmore')
+                            </div>
+                        {{-- @livewire('addmore') --}}
                         {{-- <span class="btn btn-success fas fa-plus" style="cursor:pointer;float:right;font-weight:bold"> ADD MORE </span> --}}
 
-                        {{-- <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button> --}}
+                        <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
                     </div>
                     <div class="card-body">
                         <h2><b>Fourth Part</b></h2>
