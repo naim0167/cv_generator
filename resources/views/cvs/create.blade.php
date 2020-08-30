@@ -19,7 +19,6 @@
                         {{ session('status') }}
                     </div>
                     @endif
-
                 </div>
                 <x-alert />
                 <form action="{{route('cv.store')}}" method="post">
@@ -138,6 +137,7 @@
                         </div>
                         <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
                     </div>
+
                     <div class="card-body">
                             @csrf
                             <h2><b>Third Part</b></h2>
@@ -177,7 +177,8 @@
                         {{-- <span class="btn btn-success fas fa-plus" style="cursor:pointer;float:right;font-weight:bold"> ADD MORE </span> --}}
 
                         <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
-                    </div>
+                    </div>02
+
                     <div class="card-body">
                         <h2><b>Fourth Part</b></h2>
                         <hr>
