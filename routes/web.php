@@ -21,7 +21,6 @@ Route::resource('/cv', 'cvResourceController');
 Route::post('/upload', 'UserController@uploadAvatar');
 Route::get('/', 'UserController@welcome');
 Route::get('/user','UserController@index');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
