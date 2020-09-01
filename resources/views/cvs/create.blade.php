@@ -233,6 +233,7 @@
 </div>
 {{-- fetching all text area for ckeditor --}}
 <script>
+
     var currentThirdSectionNumber = 1;
     var currentSecondSectionNumber = 1;
     $(document).ready(function () {
@@ -314,10 +315,7 @@
         });
     });
 
-    var allEditors = document.querySelectorAll('.ckeditor');
-    for (var i = 0; i < allEditors.length; ++i) {
-    ClassicEditor.create(allEditors[i]);
-    }
+
 </script>
 @endsection
 

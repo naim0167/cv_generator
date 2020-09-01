@@ -48,6 +48,11 @@ class cvResourceController extends Controller
      */
     public function store(cvcreaterequest $request)
     {
+        dd($request->all());
+
+        // foreach ($request->$cv as $cv => $value) {
+        //     dd($value);
+        // }
         $cv =cv::create([
             'firstname'=>$request->firstname,
             'lastname'=>$request->lastname,
@@ -66,6 +71,7 @@ class cvResourceController extends Controller
             'technicalSkills'=>$request->technicalSkills,
             'personalInterest'=>$request->personalInterest
         ]);
+
         $work = cvs_work::create([
             'job_start_date'=>$request->jobstartdate,
             'job_end_date'=>$request->jobenddate,
@@ -75,6 +81,7 @@ class cvResourceController extends Controller
             'workdetails'=>$request->workdetails,
             'cv_id'=>$cv->id,
         ]);
+
         $education = cvs_education::create([
             'education_institute'=>$request->educationalInstitute,
             'education_location'=>$request->educationCountry,
@@ -95,7 +102,7 @@ class cvResourceController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
