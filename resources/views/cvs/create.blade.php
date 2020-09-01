@@ -101,48 +101,57 @@
                                 <label for="profilesummary">Profile Summary</label>
                                 <textarea name ="profilesummary" class="ckeditor form-control" id="profilesummary"></textarea>
                             </div>
+                        </div><br>
+                        <div id ="second-section-body">
+                            <h4 for="professionalexperience"><b>Professional Experience #1</b></h4>
+                            <hr>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="jobstartdate">Job Start Date</label>
+                                    <input name="jobstartdate" type="date" class="form-control" id="jobstartdate" placeholder="Start Date">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="jobenddate">Job End Date</label>
+                                    <input name="jobenddate" type="date" class="form-control" id="jobenddate" aria-describedby="jobenddatehelp"
+                                        placeholder="End Date">
+                                    <small id="jobenddatehelp" class="form-text text-muted">Please don't select it if you are currently working
+                                        there</small>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="jobtitle">Job Title</label>
+                                    <input name="jobtitle" type="text" class="form-control" id="jobtitle" placeholder="Enter your job position">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="companyname">Company Name</label>
+                                    <input name="companyname" type="text" class="form-control" id="companyname" placeholder="Enter company name">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="joblocation">Job City</label>
+                                    <input name="joblocation" type="text" class="form-control" id="joblocation"
+                                        placeholder="Enter the place of work">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="workdetails">Work you did : </label>
+                                    <textarea name="workdetails" class="ckeditor form-control" id="workdetails" rows="3" cols="100"></textarea>
+                                </div>
+                            </div>
                         </div>
-                        <h5 for="professionalexperience">Professional Experience</h5>
-                        <hr>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="jobstartdate">Job Start Date</label>
-                                <input name ="jobstartdate" type="date" class="form-control" id="jobstartdate" placeholder="Start Date">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="jobenddate">Job End Date</label>
-                                <input name ="jobenddate" type="date" class="form-control" id="jobenddate" aria-describedby="jobenddatehelp" placeholder="End Date">
-                                <small id="jobenddatehelp" class="form-text text-muted">Please don't select it if you are currently working there</small>
-                            </div>
+                        <div class="card-body">
+                            <button type="button" class="btn btn-success" style="float: right;" id="add_second_section_button"><b>+ ADD
+                                    MORE</b></button>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label for="jobtitle">Job Title</label>
-                                <input name ="jobtitle" type="text" class="form-control" id="jobtitle" placeholder="Enter your job position">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="companyname">Company Name</label>
-                                <input name ="companyname" type="text" class="form-control" id="companyname" placeholder="Enter company name">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="joblocation">Job City</label>
-                                <input name ="joblocation" type="text" class="form-control" id="joblocation" placeholder="Enter the place of work">
-                            </div>
-                            <div class="form-group col-md-12">
-                                <label for="workdetails">Work you did : </label>
-                                <textarea name ="workdetails" class="ckeditor form-control" id="workdetails" rows="3" cols="100"></textarea>
-                            </div>
-                        </div>
-                        <button class="btn btn-success" style="float: right;"><b>+ ADD MORE</b></button>
                     </div>
 
                     <div id="third-section">
                         <div id="third-section-body">
                             <div class="card-body">
-                                <h2><b>Third Part 1</b></h2>
+                                <h2><b>Third Part </b></h2>
                                 <hr>
+                                <h4><b>Education Institution #1</b></h4><br><br>
                                 <div class="form-row">
                                     <div class="form-group col-md-8">
                                         <label for="educationalInstitute_1">Educational Institue Name</label>
@@ -224,20 +233,14 @@
 </div>
 {{-- fetching all text area for ckeditor --}}
 <script>
-    var allEditors = document.querySelectorAll('.ckeditor');
-    for (var i = 0; i < allEditors.length; ++i) {
-    ClassicEditor.create(allEditors[i]);
-    }
-
     var currentThirdSectionNumber = 1;
-
+    var currentSecondSectionNumber = 1;
     $(document).ready(function () {
 
         $(document).on('click', '#add_third_section_button', function () {
             currentThirdSectionNumber++;
-            var html = '<div class="card-body">\n' +
-                        '    <h2><b>Third Part '+ currentThirdSectionNumber +'</b></h2>\n' +
-                        '    <hr>\n' +
+            var thirdSection = '<div class="card-body">\n' +
+                        '    <h4><b>Education Institution # '+ currentThirdSectionNumber +'</b></h4>\n' +
                         '    <div class="form-row">\n' +
                         '        <div class="form-group col-md-8">\n' +
                         '            <label for="educationalInstitute_'+currentThirdSectionNumber+'">Educational Institue Name</label>\n' +
@@ -270,13 +273,51 @@
                         '        </div>\n' +
                         '    </div>\n' +
                         '</div>';
-
-            $("#third-section-body").append(html);
-
+            $("#third-section-body").append(thirdSection);
         });
 
+        $(document).on('click', '#add_second_section_button', function () {
+            currentSecondSectionNumber++;
+            var secondSection = '<h4 for="professionalexperience"><b>Professional Experience # '+ currentSecondSectionNumber +'</b></h4><hr>\n' +
+                                '    <div class="form-row">\n' +
+                                '        <div class="form-group col-md-6"/>\n' +
+                                '            <label for="jobstartdate_'+ currentSecondSectionNumber +'">Job Start Date</label>\n' +
+                                '            <input name ="jobstartdate_'+ currentSecondSectionNumber +'" type="date" class="form-control" id="jobstartdate_'+ currentSecondSectionNumber +'" placeholder="Start Date">\n' +
+                                '        </div>\n' +
+                                '        <div class="form-group col-md-6">\n' +
+                                '            <label for="jobenddate_'+ currentSecondSectionNumber +'">Job End Date</label>\n' +
+                                '            <input name ="jobenddate_'+ currentSecondSectionNumber +'" type="date" class="form-control" id="jobenddate_'+ currentSecondSectionNumber +'" aria-describedby="jobenddatehelp" placeholder="End Date">\n' +
+                                '            <small id="jobenddatehelp_'+ currentSecondSectionNumber +'" class="form-text text-muted">Please do not select it if you are currently working there</small>\n' +
+                                '        </div>\n' +
+                                '    </div>\n' +
+                                '    <div class="form-row">\n' +
+                                '        <div class="form-group col-md-12">\n' +
+                                '            <label for="jobtitle_'+ currentSecondSectionNumber +'">Job Title</label>\n' +
+                                '            <input name ="jobtitle_'+ currentSecondSectionNumber +'" type="text" class="form-control" id="jobtitle_'+ currentSecondSectionNumber +'" placeholder="Enter your job position">\n' +
+                                '        </div>\n' +
+                                '    </div>\n' +
+                                '    <div class="form-row">\n' +
+                                '        <div class="form-group col-md-6">\n' +
+                                '            <label for="companyname_'+ currentSecondSectionNumber +'">Company Name</label>\n' +
+                                '            <input name ="companyname_'+ currentSecondSectionNumber +'" type="text" class="form-control" id="companyname_'+ currentSecondSectionNumber +'" placeholder="Enter company name">\n' +
+                                '        </div>\n' +
+                                '        <div class="form-group col-md-6">\n' +
+                                '            <label for="joblocation_'+ currentSecondSectionNumber +'">Job City</label>\n' +
+                                '            <input name ="joblocation_'+ currentSecondSectionNumber +'" type="text" class="form-control" id="joblocation_'+ currentSecondSectionNumber +'" placeholder="Enter the place of work">\n' +
+                                '        </div>\n' +
+                                '        <div class="form-group col-md-12">\n' +
+                                '            <label for="workdetails_'+ currentSecondSectionNumber +'">Work you did : </label>\n' +
+                                '            <textarea name ="workdetails_'+ currentSecondSectionNumber +'" class="ckeditor form-control" id="workdetails_'+ currentSecondSectionNumber +'" rows="3" cols="100"></textarea>\n' +
+                                '        </div>\n' +
+                                '    </div><br><br>';
+                $("#second-section-body").append(secondSection);
+        });
     });
 
+    var allEditors = document.querySelectorAll('.ckeditor');
+    for (var i = 0; i < allEditors.length; ++i) {
+    ClassicEditor.create(allEditors[i]);
+    }
 </script>
 @endsection
 
