@@ -69,11 +69,10 @@
         @endif
 
         <div class="content">
-            <img src="https://cdn.pixabay.com/photo/2016/03/19/16/50/checklist-1266989_960_720.png" class="img-fluid" alt="CV GENERATOR">
+            <img src="https://cdn.pixabay.com/photo/2016/03/19/16/50/checklist-1266989_960_720.png" class="img-fluid " alt="CV GENERATOR" style="max-height: 85vh;">
             <h1>
                 CV GENERATOR
             </h1>
-
         </div>
     </div>
 </body>

@@ -11,6 +11,7 @@
     .bg-pattern{
         background-image: url(https://i.pinimg.com/originals/72/f1/81/72f181df88378e85363bf7c0e2a6d53c.jpg);
         background-size: cover;
+        opacity: 95%;
     }
     .whiteAnchor{
         text-decoration:none;
@@ -22,6 +23,9 @@
     font-weight:bold;
     color:#e6e6e6;
     }
+    .forgotpassword{
+
+    }
 </style>
 
 @extends('layouts.app')
@@ -29,9 +33,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-4" style="margin-top:2em">
+        <div class="col-4">
             <div class="bg-pattern">
-                {{-- <div class="card-header">{{ __('Login') }}</div> --}}
                 <div class="text-center">
                     <br>
                     <h1>
@@ -81,7 +84,6 @@
                                     {{ __('Login') }}
                                 </button>
                             </div>
-                            <br>
                             <div class="text-center">
                                 <h6><b>Sign in with</b></h6>
                                 <ul class="list-inline mt-3 mb-0">
@@ -107,7 +109,7 @@
             <div class="form-group mb-0">
                 <div class="text-center">
                     @if (Route::has('password.request'))
-                    <a class="btn btn-link" style="text-decoration : none; color:#000" href="{{ route('password.request') }}">
+                    <a class="whiteAnchor"  href="{{ route('password.request') }}">
                         {{ __('Forgot Your Password?') }}
                     </a>
                     <br>
@@ -115,10 +117,9 @@
                     @endif
                 </div>
             </div>
-            <footer class="page-footer">
-                <div class="text-center py-3 mt-4">2017- 2020 © Copyright by :
+            <footer class="page-footer text-center">
+                2017- 2020 © Copyright by :
                     <a href="" class="whiteAnchor"> YESCODERS</a>
-                </div>
             </footer>
         </div>
     </div>
