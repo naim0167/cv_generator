@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    <img src="../../../storage/app/public/whale.png" alt="">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
